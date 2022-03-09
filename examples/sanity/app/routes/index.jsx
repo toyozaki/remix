@@ -1,5 +1,4 @@
-import { useLoaderData } from "remix";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "remix";
 
 import { getClient } from "~/lib/sanity/getClient";
 
@@ -8,7 +7,7 @@ import stylesUrl from "../styles/index.css";
 export function meta() {
   return {
     title: "Remix Starter",
-    description: "Welcome to remix!"
+    description: "Welcome to remix!",
   };
 }
 
@@ -30,7 +29,7 @@ export default function Index() {
   return (
     <div style={{ textAlign: "center", padding: 20 }}>
       {movies?.length > 1
-        ? movies.map(movie => (
+        ? movies.map((movie) => (
             <div style={{ padding: 10 }} key={movie._id}>
               <Link to={movie.slug.current}>{movie.title}</Link>
             </div>
